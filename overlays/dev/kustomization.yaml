@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: 503237308475.dkr.ecr.eu-west-3.amazonaws.com/team4php
   newName: 503237308475.dkr.ecr.eu-west-3.amazonaws.com/team4php
-  newTag: abcdefg
+  newTag: 9925ab9b
 resources:
 - ../../base
 patchesStrategicMerge:
