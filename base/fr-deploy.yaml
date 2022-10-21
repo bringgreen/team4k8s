@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: team4php
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fr-fargate
+  template:
+    metadata:
+      labels:
+        app: fr-fargate
+    spec:
+      containers:
+        - name: team4php
+          image: 503237308475.dkr.ecr.eu-west-3.amazonaws.com/team4php:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

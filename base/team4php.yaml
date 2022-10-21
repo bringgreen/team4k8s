@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-deploy
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: php-deploy
+  template:
+    metadata:
+      labels:
+        app: php-deploy
+    spec:
+      containers:
+        - name: php-deploy
+          image: 503237308475.dkr.ecr.eu-west-3.amazonaws.com/team4php:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
